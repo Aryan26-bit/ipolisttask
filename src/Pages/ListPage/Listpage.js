@@ -1,7 +1,14 @@
 import React from "react";
 import "./Listpage.scss";
+import { useNavigate } from "react-router-dom";
 
 const Listpage = () => {
+  const navigate = useNavigate(); 
+
+  const handleBackClick = () => {
+    navigate("/"); 
+  };
+
   const ipoData = [
     {
       company: "GO AIR",
@@ -46,7 +53,7 @@ const Listpage = () => {
           </thead>
           <tbody>
             {ipoData.map((ipo, index) => (
-              <tr key={index}>
+              <tr key={index} onClick={handleBackClick}>
                 <td className="company">
                   <img
                     src={ipo.imageUrl}

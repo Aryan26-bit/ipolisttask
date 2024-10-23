@@ -3,18 +3,23 @@ import "./Detailpage.scss";
 import Timeline from "./TimeLine/Timeline";
 import { IoIosArrowBack } from "react-icons/io";
 import { GrDocumentDownload } from "react-icons/gr";
+import { useNavigate } from "react-router-dom";
 
 const Detailpage = () => {
   const [showFullText, setShowFullText] = useState(false);
-
+  const navigate = useNavigate(); 
   const toggleText = () => {
     setShowFullText(!showFullText);
+  };
+
+  const handleBackClick = () => {
+    navigate("/ipo-list"); 
   };
   return (
     <div className="ipo-container">
       <div className="ipo-header">
         <div className="ipo-logo">
-          <span className="left-arrow-background">
+          <span className="left-arrow-background" onClick={handleBackClick}>
             <IoIosArrowBack />
           </span>
           <img src="\images\oyo.png" alt="OYO Logo" />
