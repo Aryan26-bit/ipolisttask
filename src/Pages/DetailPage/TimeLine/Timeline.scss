@@ -1,0 +1,136 @@
+
+.ipo-timeline-container {
+  padding: 3vh;
+  border: 1px solid grey;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #e0e0e0;
+  z-index: 1;
+}
+
+/* Individual Step */
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.step-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: #50af55;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  z-index: 2;
+}
+
+.step-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-details span {
+  font-size: 14px;
+  color: #333;
+}
+
+.step-details small {
+  font-size: 12px;
+  color: #888;
+}
+
+.timeline-step:not(:last-child) {
+  flex: 1;
+}
+
+.timeline-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -50%;
+  width: 100%;
+  height: 2px;
+  background-color: #4caf50;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    position: relative;
+    max-width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .step-details {
+    display: flex;
+    flex-direction: column;
+    align-items: normal;
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 2px;
+    height: 100%;
+    background-color: #e0e0e0;
+  }
+
+  .timeline-step {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .step-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+
+  .step-details {
+    text-align: left;
+  }
+
+  .timeline-step:not(:last-child)::after {
+    content: none;
+  }
+
+  .timeline-step.active .step-icon {
+    background-color: #50af55;
+  }
+
+  .timeline-step:last-child {
+    margin-bottom: 0;
+  }
+}

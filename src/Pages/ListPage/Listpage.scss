@@ -1,0 +1,82 @@
+.ipo-list {
+  font-family: "Sora", sans-serif;
+  background-color: #fff;
+  width: 100%;
+  border: 1px solid grey;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    th,
+    td {
+      text-align: left;
+      padding: 3vh;
+      border-bottom: 1px solid #f7f7f7;
+    }
+
+    th {
+      font-weight: bold;
+      color: #898590;
+      background-color: #f5f5f5;
+    }
+
+    td.company {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      img {
+        border-radius: 50%;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+      cursor: pointer;
+    }
+  }
+}
+
+.ipo-list-container {
+  background-color: #f5f5f5;
+  border: 1px solid grey;
+  // width: 100%;
+  padding: 2vh;
+}
+
+.heading-name {
+  font-weight: 700;
+  color: #000;
+}
+
+.issue-size-text {
+  font-weight: 700;
+  color: #000;
+}
+
+.price-range-text {
+  font-weight: 700;
+  color: #000;
+}
+
+.mininvest-text {
+  font-weight: 700;
+  color: #000;
+}
+
+.ipolot-text {
+  font-weight: 400;
+  color: #898590;
+}
+
+.heading-date {
+  font-weight: 400;
+  color: #898590;
+}
